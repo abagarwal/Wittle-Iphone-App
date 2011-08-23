@@ -42,7 +42,7 @@
 	[memoryArray addObject:@"Excursion"];
 	
 	memoryContentExtractArray = [[NSMutableArray alloc]init];
-	[memoryContentExtractArray addObject:@"This memory content..."];
+	[memoryContentExtractArray addObject:@"This memory content This memory content This memory content This memory content This memory content This memory content"];
 	[memoryContentExtractArray addObject:@"This memory content..."];
 	[memoryContentExtractArray addObject:@"This memory content..."];
 	[memoryContentExtractArray addObject:@"This memory content..."];
@@ -121,9 +121,12 @@
 	DetailedMemoryView *controller = [[DetailedMemoryView alloc] initWithNibName:@"DetailedView" bundle:nil];
     controller.selectedMemoryText=selectedMemoryText;
 	controller.selectedMemoryDetails=selectedMemoryDetails;
+	/*
 	controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentModalViewController:controller animated:YES];
-    [controller release];
+    */
+	[self.navigationController pushViewController:controller animated:YES];
+	[controller release];
 }
 
 
