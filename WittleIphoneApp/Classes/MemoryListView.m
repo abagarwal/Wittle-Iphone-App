@@ -8,6 +8,8 @@
 
 #import "MemoryListView.h"
 #import "ListMemoryCell.h"
+#import "DetailedMemoryView.h"
+
 
 
 @implementation MemoryListView
@@ -109,6 +111,19 @@
 	cell.textColor = [UIColor blueColor];
 	
     return cell;
+}
+
+- (void)tableView: (UITableView *)tableView didSelectRowAtIndexPath: (NSIndexPath *)indexPath {
+	NSLog(@"Inside cell select");
+	NSString *selectedMemoryText = [memoryArray objectAtIndex:indexPath.row];
+	NSString *selectedMemoryDetails = [memoryContentExtractArray objectAtIndex:indexPath.row];	
+	
+	DetailedMemoryView *controller = [[DetailedMemoryView alloc] initWithNibName:@"DetailedView" bundle:nil];
+    controller.selectedMemoryText=selectedMemoryText;
+	controller.selectedMemoryDetails=selectedMemoryDetails;
+	controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentModalViewController:controller animated:YES];
+    [controller release];
 }
 
 
