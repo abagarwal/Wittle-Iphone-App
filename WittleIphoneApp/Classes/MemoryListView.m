@@ -55,12 +55,26 @@
 }
 
 
-/*
+
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
  [super viewDidLoad];
+	 self.navigationItem.hidesBackButton = YES;
+	 
+	 UIBarButtonItem *logoutBtn = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
+	 //:@selector(buttonTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+	 
+	 self.navigationItem.rightBarButtonItem = logoutBtn;
+	 [logoutBtn release];
  }
- */
+
+- (void) logout{
+	self.navigationController.navigationBarHidden = YES;
+	[self.navigationController popViewControllerAnimated:NO];
+	
+	
+}
+
 
 /*
  // Override to allow orientations other than the default portrait orientation.

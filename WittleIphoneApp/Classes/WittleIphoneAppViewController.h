@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MemoryListView.h"
 
-@interface WittleIphoneAppViewController : UIViewController {
+@interface WittleIphoneAppViewController : UIViewController<UITextFieldDelegate> {
 	
+	UITableView *aTableView;
+	UIView *aRootView;
+	NSMutableArray *memoryArray;
+	NSMutableArray *memoryContentExtractArray;
 	IBOutlet UITextField *usernameField;
 	IBOutlet UITextField *passwordField;
 	IBOutlet UIButton *loginButton;
@@ -18,6 +22,8 @@
 	
 	UILabel *aLabel;
 	UIButton *aButton;
+	UIButton *logoutButton;
+	UIView *mainView;
 	MemoryListView *nextView;
 }
 
@@ -29,6 +35,13 @@
 
 @property (nonatomic, retain) UILabel *aLabel;
 @property (nonatomic, retain) UIButton *aButton;
+@property (nonatomic, retain) UIButton *logoutButton;
+
+@property (nonatomic, retain) UIView *mainView;
+
+@property(nonatomic,retain)UITableView *aTableView;
+@property(nonatomic,retain)UIView *aRootView;
+@property(nonatomic,retain)NSMutableArray *memoryArray;
 
 - (IBAction) login;
 

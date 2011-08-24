@@ -18,8 +18,8 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
     
 	WittleIphoneAppViewController *_loginViewController = [[WittleIphoneAppViewController alloc] initWithNibName:@"LoginView" bundle:[NSBundle mainBundle]];
-	//self.viewController = _loginViewController;
-	//[_loginViewController release];
+	self.viewController = _loginViewController;
+	[_loginViewController release];
 	//[window addSubview:[viewController view]];
 	
 	
