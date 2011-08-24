@@ -20,13 +20,13 @@
 	WittleIphoneAppViewController *_loginViewController = [[WittleIphoneAppViewController alloc] initWithNibName:@"LoginView" bundle:[NSBundle mainBundle]];
 	self.viewController = _loginViewController;
 	[_loginViewController release];
-	[window addSubview:[viewController view]];
+	//[window addSubview:[viewController view]];
 	
 	
 	
-	//UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController: _loginViewController];
+	UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController: _loginViewController];
 	
-	//[window addSubview:nvc.view];
+	[window addSubview:nvc.view];
     // Override point for customization after app launch    
     //[window addSubview:viewController.view];
     [window makeKeyAndVisible];

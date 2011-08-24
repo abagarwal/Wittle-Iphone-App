@@ -59,12 +59,12 @@
 
 
 
-/*
- // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
  [super viewDidLoad];
+ self.navigationController.navigationBarHidden = YES;
  }
- */
+ 
 
 
 /*
@@ -101,13 +101,17 @@
 	NSLog(passwordField.text);
 	NSLog(@"Inside the login function1.....");
 	
-	if([usernameField.text  isEqualToString:@"a"])
+	if([usernameField.text  isEqualToString:@""])
 	{
 		NSLog(@"Checking Username");
-		if([passwordField.text  isEqualToString:@"a"])
+		if([passwordField.text  isEqualToString:@""])
 		{
 			NSLog(@"Checking Password");
-			[self loadNextView];
+			//[self loadNextView];
+			if(nextView == nil)
+				nextView = [[MemoryListView alloc] init];
+			[self.navigationController pushViewController:nextView animated:NO];
+			 self.navigationController.navigationBarHidden = NO;
 		}
 		
 		else {
@@ -118,11 +122,9 @@
 		[aLabel setText:@"Invalid Username."];
 	}
 	
-	/*
-	if(nextView == nil)
-		nextView = [[MemoryListView alloc] init];
-	[self.navigationController pushViewController:nextView animated:YES];
-	 */
+	
+
+	
 	
 	 /*	
 	if(usernameField.text == @"abagarwal")
@@ -152,6 +154,14 @@
 
 - (void)loadNextView {
 	[super loadView];
+	
+	/*
+	
+	aRootView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
+	//aRootView.delegate = self;
+	//aRootView.dataSource = self;
+	aRootView.autoresizesSubviews = YES;
+	
 	aTableView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] style:UITableViewStyleGrouped];
 	aTableView.delegate = self;
 	aTableView.dataSource = self;
@@ -178,8 +188,13 @@
 	[memoryContentExtractArray addObject:@"This memory content..."];
 	[memoryContentExtractArray addObject:@"This memory content..."];
 	
-	self.view = aTableView;
+	
+	[self.view addSubview:aRootView];
+	//self.view = aTableView;
+	[self.view addSubview:aTableView];
 	[self.view addSubview:logoutButton];
+	*/
+	//self.view =nil;
 	//[super viewWillAppear: animated];
 	//[[NSBundle mainBundle] loadNibNamed:@"LoginView" owner:self options:nil];
 	//[self viewDidLoad];
@@ -196,6 +211,11 @@
 
 - (void)logoutButtonPressed
 {
+	[self.logoutButton removeFromSuperview];
+	[self.aTableView removeFromSuperview];
+	//[self.aRootView removeFromSuperview];
+	
+	/*
 	//[self.view removeFromSuperview];
 	NSLog(@"Logout Button Pressed");
 	if(nextView == nil)
@@ -203,6 +223,7 @@
 	nextView.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 	[self presentModalViewController:nextView animated:YES];
 	[nextView release];
+	 */
 	
 }
 

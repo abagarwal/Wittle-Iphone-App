@@ -12,6 +12,7 @@
 @interface WittleIphoneAppViewController : UIViewController<UITextFieldDelegate> {
 	
 	UITableView *aTableView;
+	UIView *aRootView;
 	NSMutableArray *memoryArray;
 	NSMutableArray *memoryContentExtractArray;
 	IBOutlet UITextField *usernameField;
@@ -39,6 +40,7 @@
 @property (nonatomic, retain) UIView *mainView;
 
 @property(nonatomic,retain)UITableView *aTableView;
+@property(nonatomic,retain)UIView *aRootView;
 @property(nonatomic,retain)NSMutableArray *memoryArray;
 
 - (IBAction) login;

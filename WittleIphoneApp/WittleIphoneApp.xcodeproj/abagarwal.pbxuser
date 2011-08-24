@@ -11,8 +11,8 @@
 	1D3623250D0F684500981E51 /* WittleIphoneAppAppDelegate.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {948, 616}}";
-			sepNavSelRange = "{412, 230}";
-			sepNavVisRange = "{331, 750}";
+			sepNavSelRange = "{786, 20}";
+			sepNavVisRange = "{406, 680}";
 			sepNavWindowFrame = "{{15, 76}, {750, 670}}";
 		};
 	};
@@ -24,17 +24,17 @@
 	};
 	28D7ACF60DDB3853001CB0EB /* WittleIphoneAppViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {504, 672}}";
-			sepNavSelRange = "{292, 0}";
-			sepNavVisRange = "{39, 691}";
+			sepNavIntBoundsRect = "{{0, 0}, {626, 700}}";
+			sepNavSelRange = "{326, 0}";
+			sepNavVisRange = "{160, 772}";
 			sepNavWindowFrame = "{{15, 73}, {750, 670}}";
 		};
 	};
 	28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {960, 3332}}";
-			sepNavSelRange = "{6575, 0}";
-			sepNavVisRange = "{6043, 813}";
+			sepNavIntBoundsRect = "{{0, 0}, {660, 3906}}";
+			sepNavSelRange = "{3099, 0}";
+			sepNavVisRange = "{2639, 586}";
 			sepNavWindowFrame = "{{15, 73}, {750, 670}}";
 		};
 	};
@@ -89,14 +89,48 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 335776551;
-			PBXWorkspaceStateSaveDate = 335776551;
+			PBXPerProjectTemplateStateSaveDate = 335871679;
+			PBXWorkspaceStateSaveDate = 335871679;
 		};
 		perUserProjectItems = {
-			8F8074F114038B48004EF571 /* PBXTextBookmark */ = 8F8074F114038B48004EF571 /* PBXTextBookmark */;
+			8F7A14181404FEE000A6D66A /* PBXTextBookmark */ = 8F7A14181404FEE000A6D66A /* PBXTextBookmark */;
+			8F7A14241404FF6B00A6D66A /* PBXTextBookmark */ = 8F7A14241404FF6B00A6D66A /* PBXTextBookmark */;
+			8F7A14261404FF8600A6D66A /* PBXTextBookmark */ = 8F7A14261404FF8600A6D66A /* PBXTextBookmark */;
+			8F7A14281405006500A6D66A /* PBXTextBookmark */ = 8F7A14281405006500A6D66A /* PBXTextBookmark */;
+			8F7A142F1405033D00A6D66A /* PBXTextBookmark */ = 8F7A142F1405033D00A6D66A /* PBXTextBookmark */;
+			8F7A14301405033D00A6D66A /* PBXTextBookmark */ = 8F7A14301405033D00A6D66A /* PBXTextBookmark */;
+			8F7A14311405033D00A6D66A /* PBXTextBookmark */ = 8F7A14311405033D00A6D66A /* PBXTextBookmark */;
+			8F7A14321405033D00A6D66A /* PBXTextBookmark */ = 8F7A14321405033D00A6D66A /* PBXTextBookmark */;
+			8F7A14331405033D00A6D66A /* PBXTextBookmark */ = 8F7A14331405033D00A6D66A /* PBXTextBookmark */;
+			8F7A14341405033D00A6D66A /* PBXTextBookmark */ = 8F7A14341405033D00A6D66A /* PBXTextBookmark */;
+			8F7A14351405033D00A6D66A /* PBXTextBookmark */ = 8F7A14351405033D00A6D66A /* PBXTextBookmark */;
+			8F7A14361405033D00A6D66A /* PBXTextBookmark */ = 8F7A14361405033D00A6D66A /* PBXTextBookmark */;
+			8F7A14371405033D00A6D66A /* PBXTextBookmark */ = 8F7A14371405033D00A6D66A /* PBXTextBookmark */;
+			8F7A14381405036600A6D66A /* PBXTextBookmark */ = 8F7A14381405036600A6D66A /* PBXTextBookmark */;
+			8F7A143B140503A000A6D66A /* PBXTextBookmark */ = 8F7A143B140503A000A6D66A /* PBXTextBookmark */;
+			8F7A143C140503A000A6D66A /* PBXTextBookmark */ = 8F7A143C140503A000A6D66A /* PBXTextBookmark */;
+			8F7A143D140503A000A6D66A /* PBXTextBookmark */ = 8F7A143D140503A000A6D66A /* PBXTextBookmark */;
+			8F7A143E140503A000A6D66A /* PBXTextBookmark */ = 8F7A143E140503A000A6D66A /* PBXTextBookmark */;
+			8F8074F114038B48004EF571 = 8F8074F114038B48004EF571 /* PBXTextBookmark */;
 			8F82F9BD1402A63100307511 = 8F82F9BD1402A63100307511 /* PBXTextBookmark */;
 			8F82F9BE1402A63100307511 = 8F82F9BE1402A63100307511 /* PBXTextBookmark */;
 			8F82F9C11402A66200307511 = 8F82F9C11402A66200307511 /* PBXTextBookmark */;
+			8F8459F1140399AB001AC99B = 8F8459F1140399AB001AC99B /* PBXTextBookmark */;
+			8F845A181403A05D001AC99B = 8F845A181403A05D001AC99B /* PBXTextBookmark */;
+			8F845A191403A05D001AC99B = 8F845A191403A05D001AC99B /* PBXTextBookmark */;
+			8F845A221403A069001AC99B = 8F845A221403A069001AC99B /* PBXTextBookmark */;
+			8F845A231403A069001AC99B = 8F845A231403A069001AC99B /* PBXTextBookmark */;
+			8F845A241403A069001AC99B = 8F845A241403A069001AC99B /* PBXTextBookmark */;
+			8F845A251403A069001AC99B = 8F845A251403A069001AC99B /* PBXTextBookmark */;
+			8F845A281403A0D9001AC99B = 8F845A281403A0D9001AC99B /* PBXTextBookmark */;
+			8F845A2A1403A17F001AC99B = 8F845A2A1403A17F001AC99B /* PBXTextBookmark */;
+			8F845A2C1403A1D8001AC99B = 8F845A2C1403A1D8001AC99B /* PBXTextBookmark */;
+			8F845A2D1403A1D8001AC99B = 8F845A2D1403A1D8001AC99B /* PBXTextBookmark */;
+			8F845A2E1403A1D8001AC99B = 8F845A2E1403A1D8001AC99B /* PBXTextBookmark */;
+			8F845A2F1403A1D8001AC99B = 8F845A2F1403A1D8001AC99B /* PBXTextBookmark */;
+			8F845A301403A1D8001AC99B = 8F845A301403A1D8001AC99B /* PBXTextBookmark */;
+			8F845A331403A2C7001AC99B = 8F845A331403A2C7001AC99B /* PBXTextBookmark */;
+			8F845A351403A2E3001AC99B = 8F845A351403A2E3001AC99B /* PBXTextBookmark */;
 			8FEBD7A614022E30006C533A = 8FEBD7A614022E30006C533A /* PBXTextBookmark */;
 			8FEBD7A714022E30006C533A = 8FEBD7A714022E30006C533A /* PBXTextBookmark */;
 			8FEBD7B814022F31006C533A = 8FEBD7B814022F31006C533A /* PBXTextBookmark */;
@@ -194,12 +228,192 @@
 			sepNavVisRange = "{0, 199}";
 		};
 	};
+	8F7A14181404FEE000A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 211";
+		rLen = 0;
+		rLoc = 5977;
+		rType = 0;
+		vrLen = 820;
+		vrLoc = 5429;
+	};
+	8F7A14241404FF6B00A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 209";
+		rLen = 0;
+		rLoc = 5893;
+		rType = 0;
+		vrLen = 582;
+		vrLoc = 5740;
+	};
+	8F7A14261404FF8600A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 210";
+		rLen = 0;
+		rLoc = 5935;
+		rType = 0;
+		vrLen = 580;
+		vrLoc = 5740;
+	};
+	8F7A14281405006500A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 113";
+		rLen = 0;
+		rLoc = 3100;
+		rType = 0;
+		vrLen = 421;
+		vrLoc = 3013;
+	};
+	8F7A142F1405033D00A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* WittleIphoneAppAppDelegate.m */;
+		name = "WittleIphoneAppAppDelegate.m: 27";
+		rLen = 20;
+		rLoc = 786;
+		rType = 0;
+		vrLen = 680;
+		vrLoc = 406;
+	};
+	8F7A14301405033D00A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8FFFE74413FE44FC00CDDAF6 /* MemoryListView.m */;
+		name = "MemoryListView.m: 69";
+		rLen = 0;
+		rLoc = 2394;
+		rType = 0;
+		vrLen = 871;
+		vrLoc = 1526;
+	};
+	8F7A14311405033D00A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 113";
+		rLen = 0;
+		rLoc = 3100;
+		rType = 0;
+		vrLen = 572;
+		vrLoc = 2546;
+	};
+	8F7A14321405033D00A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 113";
+		rLen = 0;
+		rLoc = 3100;
+		rType = 0;
+		vrLen = 529;
+		vrLoc = 2589;
+	};
+	8F7A14331405033D00A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* WittleIphoneAppAppDelegate.m */;
+		name = "WittleIphoneAppAppDelegate.m: 27";
+		rLen = 20;
+		rLoc = 786;
+		rType = 0;
+		vrLen = 680;
+		vrLoc = 406;
+	};
+	8F7A14341405033D00A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8FFFE74413FE44FC00CDDAF6 /* MemoryListView.m */;
+		name = "MemoryListView.m: 68";
+		rLen = 0;
+		rLoc = 2396;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 1751;
+	};
+	8F7A14351405033D00A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 113";
+		rLen = 0;
+		rLoc = 3100;
+		rType = 0;
+		vrLen = 572;
+		vrLoc = 2546;
+	};
+	8F7A14361405033D00A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8FFFE74413FE44FC00CDDAF6 /* MemoryListView.m */;
+		name = "MemoryListView.m: 69";
+		rLen = 0;
+		rLoc = 2394;
+		rType = 0;
+		vrLen = 871;
+		vrLoc = 1526;
+	};
+	8F7A14371405033D00A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 62";
+		rLen = 0;
+		rLoc = 1732;
+		rType = 0;
+		vrLen = 691;
+		vrLoc = 1244;
+	};
+	8F7A14381405036600A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 114";
+		rLen = 0;
+		rLoc = 3099;
+		rType = 0;
+		vrLen = 586;
+		vrLoc = 2639;
+	};
+	8F7A143B140503A000A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 114";
+		rLen = 0;
+		rLoc = 3099;
+		rType = 0;
+		vrLen = 586;
+		vrLoc = 2639;
+	};
+	8F7A143C140503A000A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8FFFE74413FE44FC00CDDAF6 /* MemoryListView.m */;
+		name = "MemoryListView.m: 69";
+		rLen = 0;
+		rLoc = 2394;
+		rType = 0;
+		vrLen = 871;
+		vrLoc = 1526;
+	};
+	8F7A143D140503A000A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 114";
+		rLen = 0;
+		rLoc = 3099;
+		rType = 0;
+		vrLen = 586;
+		vrLoc = 2639;
+	};
+	8F7A143E140503A000A6D66A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8FFFE74413FE44FC00CDDAF6 /* MemoryListView.m */;
+		name = "MemoryListView.m: 68";
+		rLen = 0;
+		rLoc = 2333;
+		rType = 0;
+		vrLen = 808;
+		vrLoc = 1592;
+	};
 	8F8074F114038B48004EF571 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 229";
 		rLen = 0;
-		rLoc = 6575;
+		rLoc = 7100;
 		rType = 0;
 		vrLen = 813;
 		vrLoc = 6043;
@@ -209,7 +423,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 229";
 		rLen = 0;
-		rLoc = 6573;
+		rLoc = 7098;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 3521;
@@ -219,7 +433,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 229";
 		rLen = 0;
-		rLoc = 6573;
+		rLoc = 7098;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 3521;
@@ -229,17 +443,175 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 229";
 		rLen = 0;
-		rLoc = 6575;
+		rLoc = 7100;
 		rType = 0;
 		vrLen = 818;
 		vrLoc = 6040;
+	};
+	8F8459F1140399AB001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 229";
+		rLen = 0;
+		rLoc = 7100;
+		rType = 0;
+		vrLen = 748;
+		vrLoc = 5464;
+	};
+	8F845A181403A05D001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: request for member 'delegate' in something not a structure or union";
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		rLen = 1;
+		rLoc = 160;
+		rType = 1;
+	};
+	8F845A191403A05D001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 157";
+		rLen = 30;
+		rLoc = 3833;
+		rType = 0;
+		vrLen = 261;
+		vrLoc = 3559;
+	};
+	8F845A221403A069001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* WittleIphoneAppViewController.h */;
+		name = "WittleIphoneAppViewController.h: 15";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 772;
+		vrLoc = 160;
+	};
+	8F845A231403A069001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 156";
+		rLen = 0;
+		rLoc = 3759;
+		rType = 0;
+		vrLen = 901;
+		vrLoc = 318;
+	};
+	8F845A241403A069001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* WittleIphoneAppViewController.h */;
+		name = "WittleIphoneAppViewController.h: 15";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 772;
+		vrLoc = 160;
+	};
+	8F845A251403A069001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 158";
+		rLen = 0;
+		rLoc = 3866;
+		rType = 0;
+		vrLen = 567;
+		vrLoc = 3480;
+	};
+	8F845A281403A0D9001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 189";
+		rLen = 0;
+		rLoc = 5266;
+		rType = 0;
+		vrLen = 1056;
+		vrLoc = 4658;
+	};
+	8F845A2A1403A17F001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 192";
+		rLen = 0;
+		rLoc = 5386;
+		rType = 0;
+		vrLen = 1071;
+		vrLoc = 4656;
+	};
+	8F845A2C1403A1D8001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* WittleIphoneAppAppDelegate.m */;
+		name = "WittleIphoneAppAppDelegate.m: 24";
+		rLen = 0;
+		rLoc = 690;
+		rType = 0;
+		vrLen = 750;
+		vrLoc = 331;
+	};
+	8F845A2D1403A1D8001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 192";
+		rLen = 0;
+		rLoc = 5386;
+		rType = 0;
+		vrLen = 1071;
+		vrLoc = 4656;
+	};
+	8F845A2E1403A1D8001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 192";
+		rLen = 0;
+		rLoc = 5386;
+		rType = 0;
+		vrLen = 1071;
+		vrLoc = 4656;
+	};
+	8F845A2F1403A1D8001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* WittleIphoneAppAppDelegate.m */;
+		name = "WittleIphoneAppAppDelegate.m: 24";
+		rLen = 0;
+		rLoc = 690;
+		rType = 0;
+		vrLen = 750;
+		vrLoc = 331;
+	};
+	8F845A301403A1D8001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 192";
+		rLen = 0;
+		rLoc = 5371;
+		rType = 0;
+		vrLen = 1011;
+		vrLoc = 4489;
+	};
+	8F845A331403A2C7001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 211";
+		rLen = 0;
+		rLoc = 5977;
+		rType = 0;
+		vrLen = 582;
+		vrLoc = 5656;
+	};
+	8F845A351403A2E3001AC99B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
+		name = "WittleIphoneAppViewController.m: 157";
+		rLen = 0;
+		rLoc = 3836;
+		rType = 0;
+		vrLen = 321;
+		vrLoc = 3559;
 	};
 	8FEBD7A614022E30006C533A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 8FFFE74413FE44FC00CDDAF6 /* MemoryListView.m */;
 		name = "MemoryListView.m: 106";
 		rLen = 0;
-		rLoc = 3338;
+		rLoc = 3833;
 		rType = 0;
 		vrLen = 593;
 		vrLoc = 2855;
@@ -259,7 +631,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* WittleIphoneAppViewController.h */;
 		name = "WittleIphoneAppViewController.h: 37";
 		rLen = 0;
-		rLoc = 1249;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 598;
 		vrLoc = 274;
@@ -269,7 +641,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 125";
 		rLen = 0;
-		rLoc = 6862;
+		rLoc = 7387;
 		rType = 0;
 		vrLen = 638;
 		vrLoc = 1191;
@@ -279,7 +651,7 @@
 		fRef = 1D3623250D0F684500981E51 /* WittleIphoneAppAppDelegate.m */;
 		name = "WittleIphoneAppAppDelegate.m: 29";
 		rLen = 0;
-		rLoc = 842;
+		rLoc = 840;
 		rType = 0;
 		vrLen = 753;
 		vrLoc = 331;
@@ -309,7 +681,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 124";
 		rLen = 0;
-		rLoc = 3610;
+		rLoc = 3715;
 		rType = 0;
 		vrLen = 737;
 		vrLoc = 2934;
@@ -349,7 +721,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* WittleIphoneAppViewController.h */;
 		name = "WittleIphoneAppViewController.h: 37";
 		rLen = 0;
-		rLoc = 1220;
+		rLoc = 1286;
 		rType = 0;
 		vrLen = 772;
 		vrLoc = 302;
@@ -359,7 +731,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 124";
 		rLen = 0;
-		rLoc = 3610;
+		rLoc = 3715;
 		rType = 0;
 		vrLen = 691;
 		vrLoc = 0;
@@ -389,7 +761,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 155";
 		rLen = 0;
-		rLoc = 6855;
+		rLoc = 7380;
 		rType = 0;
 		vrLen = 697;
 		vrLoc = 3671;
@@ -399,7 +771,7 @@
 		fRef = 8FFFE74413FE44FC00CDDAF6 /* MemoryListView.m */;
 		name = "MemoryListView.m: 93";
 		rLen = 696;
-		rLoc = 2750;
+		rLoc = 3245;
 		rType = 0;
 		vrLen = 705;
 		vrLoc = 2749;
@@ -409,7 +781,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 176";
 		rLen = 0;
-		rLoc = 6855;
+		rLoc = 7380;
 		rType = 0;
 		vrLen = 883;
 		vrLoc = 4156;
@@ -439,7 +811,7 @@
 		fRef = 1D3623250D0F684500981E51 /* WittleIphoneAppAppDelegate.m */;
 		name = "WittleIphoneAppAppDelegate.m: 29";
 		rLen = 0;
-		rLoc = 842;
+		rLoc = 840;
 		rType = 0;
 		vrLen = 800;
 		vrLoc = 283;
@@ -449,7 +821,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 101";
 		rLen = 0;
-		rLoc = 3121;
+		rLoc = 3226;
 		rType = 0;
 		vrLen = 836;
 		vrLoc = 3152;
@@ -459,7 +831,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* WittleIphoneAppViewController.h */;
 		name = "WittleIphoneAppViewController.h: 36";
 		rLen = 0;
-		rLoc = 1061;
+		rLoc = 1081;
 		rType = 0;
 		vrLen = 821;
 		vrLoc = 332;
@@ -469,7 +841,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 153";
 		rLen = 0;
-		rLoc = 5156;
+		rLoc = 5553;
 		rType = 0;
 		vrLen = 962;
 		vrLoc = 3757;
@@ -479,7 +851,7 @@
 		fRef = 1D3623250D0F684500981E51 /* WittleIphoneAppAppDelegate.m */;
 		name = "WittleIphoneAppAppDelegate.m: 29";
 		rLen = 0;
-		rLoc = 814;
+		rLoc = 812;
 		rType = 0;
 		vrLen = 750;
 		vrLoc = 331;
@@ -489,7 +861,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* WittleIphoneAppViewController.h */;
 		name = "WittleIphoneAppViewController.h: 36";
 		rLen = 0;
-		rLoc = 1061;
+		rLoc = 1081;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 376;
@@ -499,7 +871,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 153";
 		rLen = 0;
-		rLoc = 5156;
+		rLoc = 5553;
 		rType = 0;
 		vrLen = 588;
 		vrLoc = 4573;
@@ -519,7 +891,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* WittleIphoneAppViewController.h */;
 		name = "WittleIphoneAppViewController.h: 39";
 		rLen = 0;
-		rLoc = 1110;
+		rLoc = 1130;
 		rType = 0;
 		vrLen = 736;
 		vrLoc = 485;
@@ -529,7 +901,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 124";
 		rLen = 0;
-		rLoc = 3487;
+		rLoc = 3592;
 		rType = 0;
 		vrLen = 827;
 		vrLoc = 4214;
@@ -539,7 +911,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* WittleIphoneAppViewController.h */;
 		name = "WittleIphoneAppViewController.h: 25";
 		rLen = 0;
-		rLoc = 635;
+		rLoc = 655;
 		rType = 0;
 		vrLen = 776;
 		vrLoc = 376;
@@ -549,7 +921,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 124";
 		rLen = 0;
-		rLoc = 3487;
+		rLoc = 3592;
 		rType = 0;
 		vrLen = 802;
 		vrLoc = 4239;
@@ -559,7 +931,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* WittleIphoneAppViewController.h */;
 		name = "WittleIphoneAppViewController.h: 39";
 		rLen = 0;
-		rLoc = 1110;
+		rLoc = 1130;
 		rType = 0;
 		vrLen = 737;
 		vrLoc = 485;
@@ -569,7 +941,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 124";
 		rLen = 0;
-		rLoc = 3487;
+		rLoc = 3592;
 		rType = 0;
 		vrLen = 741;
 		vrLoc = 0;
@@ -579,7 +951,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* WittleIphoneAppViewController.h */;
 		name = "WittleIphoneAppViewController.h: 39";
 		rLen = 0;
-		rLoc = 1110;
+		rLoc = 1130;
 		rType = 0;
 		vrLen = 736;
 		vrLoc = 485;
@@ -609,7 +981,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 127";
 		rLen = 0;
-		rLoc = 3591;
+		rLoc = 3696;
 		rType = 0;
 		vrLen = 823;
 		vrLoc = 4445;
@@ -639,7 +1011,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 161";
 		rLen = 0;
-		rLoc = 5424;
+		rLoc = 5821;
 		rType = 0;
 		vrLen = 894;
 		vrLoc = 3345;
@@ -659,7 +1031,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 161";
 		rLen = 0;
-		rLoc = 5424;
+		rLoc = 5821;
 		rType = 0;
 		vrLen = 894;
 		vrLoc = 3345;
@@ -669,7 +1041,7 @@
 		fRef = 8FFFE74413FE44FC00CDDAF6 /* MemoryListView.m */;
 		name = "MemoryListView.m: 92";
 		rLen = 0;
-		rLoc = 2749;
+		rLoc = 3244;
 		rType = 0;
 		vrLen = 732;
 		vrLoc = 1658;
@@ -679,7 +1051,7 @@
 		fRef = 8FFFE74413FE44FC00CDDAF6 /* MemoryListView.m */;
 		name = "MemoryListView.m: 92";
 		rLen = 0;
-		rLoc = 2749;
+		rLoc = 3244;
 		rType = 0;
 		vrLen = 732;
 		vrLoc = 1658;
@@ -709,7 +1081,7 @@
 		fRef = 8FFFE74413FE44FC00CDDAF6 /* MemoryListView.m */;
 		name = "MemoryListView.m: 92";
 		rLen = 0;
-		rLoc = 2749;
+		rLoc = 3244;
 		rType = 0;
 		vrLen = 732;
 		vrLoc = 1658;
@@ -739,7 +1111,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 229";
 		rLen = 0;
-		rLoc = 6573;
+		rLoc = 7098;
 		rType = 0;
 		vrLen = 877;
 		vrLoc = 3591;
@@ -749,7 +1121,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 229";
 		rLen = 0;
-		rLoc = 6573;
+		rLoc = 7098;
 		rType = 0;
 		vrLen = 1070;
 		vrLoc = 3591;
@@ -759,7 +1131,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 229";
 		rLen = 0;
-		rLoc = 6573;
+		rLoc = 7098;
 		rType = 0;
 		vrLen = 1070;
 		vrLoc = 3591;
@@ -769,7 +1141,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 229";
 		rLen = 0;
-		rLoc = 6573;
+		rLoc = 7098;
 		rType = 0;
 		vrLen = 1070;
 		vrLoc = 3591;
@@ -779,7 +1151,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 229";
 		rLen = 0;
-		rLoc = 6573;
+		rLoc = 7098;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 3591;
@@ -810,7 +1182,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 229";
 		rLen = 0;
-		rLoc = 6573;
+		rLoc = 7098;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 3591;
@@ -903,7 +1275,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 229";
 		rLen = 0;
-		rLoc = 6573;
+		rLoc = 7098;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 3591;
@@ -913,7 +1285,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 229";
 		rLen = 0;
-		rLoc = 6573;
+		rLoc = 7098;
 		rType = 0;
 		vrLen = 879;
 		vrLoc = 3591;
@@ -997,9 +1369,9 @@
 	};
 	8FFFE74413FE44FC00CDDAF6 /* MemoryListView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {984, 1512}}";
-			sepNavSelRange = "{2749, 0}";
-			sepNavVisRange = "{1658, 732}";
+			sepNavIntBoundsRect = "{{0, 0}, {984, 1792}}";
+			sepNavSelRange = "{2333, 0}";
+			sepNavVisRange = "{1592, 808}";
 			sepNavWindowFrame = "{{15, 76}, {750, 670}}";
 		};
 	};
@@ -1008,7 +1380,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* WittleIphoneAppViewController.h */;
 		name = "WittleIphoneAppViewController.h: 37";
 		rLen = 0;
-		rLoc = 1249;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 456;
 		vrLoc = 0;
@@ -1018,7 +1390,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* WittleIphoneAppViewController.m */;
 		name = "WittleIphoneAppViewController.m: 123";
 		rLen = 0;
-		rLoc = 6862;
+		rLoc = 7387;
 		rType = 0;
 		vrLen = 399;
 		vrLoc = 0;
@@ -1038,7 +1410,7 @@
 		fRef = 8FFFE74413FE44FC00CDDAF6 /* MemoryListView.m */;
 		name = "MemoryListView.m: 105";
 		rLen = 0;
-		rLoc = 3454;
+		rLoc = 3949;
 		rType = 0;
 		vrLen = 701;
 		vrLoc = 2143;
