@@ -27,7 +27,9 @@
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
-	[super loadView];
+	[super loadView];	
+	self.navigationItem.hidesBackButton = YES;
+	
 	aTableView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] style:UITableViewStyleGrouped];
 	aTableView.delegate = self;
 	aTableView.dataSource = self;

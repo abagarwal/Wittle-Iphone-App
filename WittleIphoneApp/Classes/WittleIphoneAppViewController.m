@@ -52,7 +52,7 @@
 	if(nextView == nil)
 		nextView = [[MemoryListView alloc] init];
 	
-	[self.navigationController pushViewController:nextView animated:YES];
+	[self.navigationController pushViewController:nextView animated:NO];
 }
 
 
