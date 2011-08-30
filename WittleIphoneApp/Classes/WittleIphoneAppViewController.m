@@ -8,10 +8,12 @@
 
 #import "WittleIphoneAppViewController.h"
 #import "ListMemoryCell.h"
+#import "NoMemoryView.h"
 
 @implementation WittleIphoneAppViewController
 
 @synthesize aLabel;
+@synthesize loginLabel;
 @synthesize aButton;
 @synthesize usernameField;
 @synthesize passwordField;
@@ -32,14 +34,18 @@
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
+	
 	[super loadView];
-	[self.view setBackgroundColor:[UIColor whiteColor]];
+	[self.view setBackgroundColor:[UIColor blueColor]];
+	/*
+	
 	aLabel = [[UILabel alloc]initWithFrame:CGRectMake(135, 50, 200, 40)];
 	aLabel.text = @"Wittle";
 	[aLabel setTextColor:[UIColor redColor]];
 	//[aLabel setFont: [UIFont systemFontSize:22]];
 	[aLabel setBackgroundColor:[UIColor	whiteColor]];
 	[self.view addSubview:aLabel];
+	 */
 	
 	//create a button row
 	//aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -54,7 +60,7 @@
 	if(nextView == nil)
 		nextView = [[MemoryListView alloc] init];
 	
-
+	//self.navigationController.navigationBarHidden = NO;
 	[self.navigationController pushViewController:nextView animated:NO];
 
 }
@@ -64,7 +70,19 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
  [super viewDidLoad];
- self.navigationController.navigationBarHidden = YES;
+	 self.navigationController.navigationBarHidden = YES;
+ 
+	 aTableView = [[UITableView alloc] initWithFrame:CGRectMake(0,150,320,100) style:UITableViewStyleGrouped];
+	 aTableView.delegate = self;
+	 aTableView.dataSource = self;
+	 aTableView.autoresizesSubviews = YES; 
+	 
+	 aTableView.backgroundColor = [UIColor clearColor];
+	 aTableView.opaque = NO;
+	// aTableView.backgroundView = nil;
+	 
+	 [self.view addSubview:aTableView];	
+	 
  }
  
 
@@ -96,10 +114,30 @@
 
 - (IBAction) login
 {
-	
-	
 	NSLog(@"Inside the login function.....");
+	[loginButton setHidden:YES];
+	[loginLabel setHidden:NO];
+	[loginIndicator setHidden:NO];
+	[loginIndicator startAnimating];
+	/*
+	int i=0;
+	while(i<1000000000) {
+		i=i+1;
+	}
+	 */
+	/*
+	self.navigationController.navigationBarHidden = NO;
+	[self.navigationController setToolbarHidden:NO];
+	[self.navigationController pushViewController:[[NoMemoryView alloc] initWithNibName:@"NoMemory" bundle:Nil] animated:YES];
+	*/
+	if(nextView == nil)
+		nextView = [[MemoryListView alloc] init];
+	self.navigationController.navigationBarHidden = NO;
+	[self.navigationController setToolbarHidden:NO];
+	[self.navigationController pushViewController:nextView animated:NO];	
 	
+	
+	/*
 	NSLog(passwordField.text);
 	NSLog(@"Inside the login function1.....");
 	
@@ -112,8 +150,10 @@
 			//[self loadNextView];
 			if(nextView == nil)
 				nextView = [[MemoryListView alloc] init];
+			self.navigationController.navigationBarHidden = NO;
+			[self.navigationController setToolbarHidden:NO];
 			[self.navigationController pushViewController:nextView animated:NO];
-			 self.navigationController.navigationBarHidden = NO;
+			// self.navigationController.navigationBarHidden = NO;
 		}
 		
 		else {
@@ -146,7 +186,7 @@
 		[aLabel setText:@"Invalid Credentials."];
 	}
 */
-	
+
 	
 	//loginIndicator.hidden = FALSE;
 	//[loginIndicator startAnimating];
@@ -231,37 +271,151 @@
 
 
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [memoryArray count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *MyIdentifier = @"My Identifier";
-    
-    ListMemoryCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
-	if (cell == nil) {
-		cell = [[[ListMemoryCell alloc] initWithFrame:CGRectZero reuseIdentifier:MyIdentifier] autorelease];
-	}
-    
-    if(indexPath.section == 0) {
-		cell.memoryTitle.text = [memoryArray objectAtIndex:indexPath.row];
-	    cell.memoryContentExtract.text = [memoryContentExtractArray objectAtIndex:indexPath.row];
-	}
-	else {
-		[cell setText:@"I am in Section 2"];
-	}
-	cell.textColor = [UIColor blueColor];
-	
-    return cell;
-}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
    [theTextField resignFirstResponder];
 	return YES;
 }
+
+-(void)popNavControllerToSelf{
+	[self.navigationController popToViewController:self animated:NO];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	if(section==0){
+		return 2;
+	}
+	else
+		return 1;
+}
+
+
+
+
+
+/*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+    static NSString *CellIdentifier = @"Cell";
+	
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		
+        UILabel *startDtLbl = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 90, 25)];
+		
+		
+		
+		if (indexPath.section == 0)
+		{
+			if (indexPath.row == 0) {
+				UITextField *usernameField1 = [[UITextField alloc] initWithFrame:CGRectMake(100,10,80,25)];
+				startDtLbl.text = @"Username: ";
+				startDtLbl.backgroundColor = [UIColor clearColor];
+				[cell.contentView addSubview:startDtLbl];
+				[cell.contentView addSubview:usernameField1];
+				}
+			else {
+				UITextField *passwordField1 = [[UITextField alloc] initWithFrame:CGRectMake(100,10,80,25)];
+				startDtLbl.text = @"Password: ";
+				startDtLbl.backgroundColor = [UIColor clearColor];
+				[cell.contentView addSubview:startDtLbl];
+				[cell.contentView addSubview:passwordField1];
+			}
+		}
+		else
+		{
+			NSLog(@"Inside else section");
+			
+			UIButton *submitButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+			submitButton.frame = CGRectMake(0,0, 300, 45);
+			//UIImage *buttonImage1 = [UIImage imageNamed:@"share_icon-1.png"];
+			//[submitButton setBackgroundImage:buttonImage1 forState:UIControlStateNormal];
+			[submitButton setTitle:@"Sign in" forState:UIControlStateNormal];
+			[submitButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
+			
+			[cell.contentView addSubview:submitButton];			
+		}
+	}
+		
+		
+        
+		
+
+    return cell;
+}
+*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	
+	
+	
+    static NSString *kCellIdentifier = @"Cell";
+	
+  
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+	if (cell == nil) {
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
+									   reuseIdentifier:kCellIdentifier] autorelease];
+		cell.accessoryType = UITableViewCellAccessoryNone;
+		
+		if ([indexPath section] == 0) {
+			UITextField *playerTextField = [[UITextField alloc] initWithFrame:CGRectMake(110, 10, 185, 30)];
+			playerTextField.adjustsFontSizeToFitWidth = YES;
+			playerTextField.textColor = [UIColor blackColor];
+			playerTextField.delegate = self;
+			if ([indexPath row] == 0) {
+				playerTextField.placeholder = @"example@gmail.com";
+				playerTextField.keyboardType = UIKeyboardTypeEmailAddress;
+				//playerTextField.returnKeyType = UIReturnKeyNext;
+			}
+			else {
+				playerTextField.placeholder = @"Required";
+				//playerTextField.keyboardType = UIKeyboardTypeDefault;
+				//playerTextField.returnKeyType = UIReturnKeyDone;
+				playerTextField.secureTextEntry = YES;
+			}       
+			playerTextField.backgroundColor = [UIColor whiteColor];
+			playerTextField.autocorrectionType = UITextAutocorrectionTypeNo; // no auto correction support
+			playerTextField.autocapitalizationType = UITextAutocapitalizationTypeNone; // no auto capitalization support
+			playerTextField.textAlignment = UITextAlignmentLeft;
+			playerTextField.tag = 0;
+			//playerTextField.delegate = self;
+			
+			playerTextField.clearButtonMode = UITextFieldViewModeNever; // no clear 'x' button to the right
+			[playerTextField setEnabled: YES];
+			
+			[cell addSubview:playerTextField];
+			
+			[playerTextField release];
+		}
+	}
+	if ([indexPath section] == 0) { // Email & Password Section
+		if ([indexPath row] == 0) { // Email
+			cell.textLabel.text = @"Email";
+		}
+		else {
+			cell.textLabel.text = @"Password";
+		}
+	}
+	else { // Login button section
+		NSLog(@"Inside else section");
+		
+		UIButton *submitButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+		submitButton.frame = CGRectMake(0,0, 300, 45);
+		//UIImage *buttonImage1 = [UIImage imageNamed:@"share_icon-1.png"];
+		//[submitButton setBackgroundImage:buttonImage1 forState:UIControlStateNormal];
+		[submitButton setTitle:@"Sign in" forState:UIControlStateNormal];
+		[submitButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
+		
+		[cell.contentView addSubview:submitButton];			
+	}
+	return cell;    
+}
+
 
 @end

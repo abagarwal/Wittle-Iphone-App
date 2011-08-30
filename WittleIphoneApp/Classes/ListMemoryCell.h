@@ -12,9 +12,11 @@
 @interface ListMemoryCell : UITableViewCell {
 	UILabel *memoryTitle;
 	UILabel *memoryContentExtract;
+	UIImageView *imageView;
 }
 
 @property(nonatomic,retain)UILabel *memoryTitle;
 @property(nonatomic,retain)UILabel *memoryContentExtract;
+@property(nonatomic,retain)UIImageView *imageView;
 
 @end

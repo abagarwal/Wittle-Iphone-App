@@ -21,6 +21,7 @@
 	IBOutlet UIActivityIndicatorView *loginIndicator;
 	
 	UILabel *aLabel;
+	IBOutlet UILabel *loginLabel;
 	UIButton *aButton;
 	UIButton *logoutButton;
 	UIView *mainView;
@@ -34,6 +35,7 @@
 @property (nonatomic, retain) UIActivityIndicatorView *loginIndicator;
 
 @property (nonatomic, retain) UILabel *aLabel;
+@property (nonatomic, retain) UILabel *loginLabel;
 @property (nonatomic, retain) UIButton *aButton;
 @property (nonatomic, retain) UIButton *logoutButton;
 
