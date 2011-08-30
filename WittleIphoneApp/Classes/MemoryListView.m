@@ -14,7 +14,6 @@
 
 
 @implementation MemoryListView
-@synthesize countries;
 @synthesize selectedArray;
 @synthesize inPseudoEditMode;
 @synthesize selectedImage;
@@ -28,15 +27,15 @@
 -(IBAction)togglePseudoEditMode
 {
 	self.inPseudoEditMode = !inPseudoEditMode;
-//	toolbar.hidden = !inPseudoEditMode;
+    //toolbar.hidden = !inPseudoEditMode;
 	
-//	[self.tableView reloadData];
+	[self.view reloadData];
 	
 }
 - (void)populateSelectedArray
 {
-	NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[countries count]];
-	for (int i=0; i < [countries count]; i++)
+	NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[memoryArray count]];
+	for (int i=0; i < [memoryArray count]; i++)
 		[array addObject:[NSNumber numberWithBool:NO]];
 	self.selectedArray = array;
 	[array release];
@@ -84,8 +83,20 @@
 	
 	self.view = aTableView;	
 	
-	deleteButton = [[UIBarButtonItem alloc] initWithTitle:@"Delete" 
-															   style:UIBarButtonItemStyleBordered target:self action:@selector(deletePerformed)];
+	
+	UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+	[button setBackgroundImage:[UIImage imageNamed:@"deletecolor.png"] forState:UIControlStateNormal];
+	[button setTitle:@"Delete" forState:UIControlStateNormal];
+	button.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12.0f];
+	//[button.layer setCornerRadius:4.0f];
+	//[button.layer setMasksToBounds:YES];
+	//[button.layer setBorderWidth:1.0f];
+	//[button.layer setBorderColor: [[UIColor grayColor] CGColor]];
+	button.frame=CGRectMake(0.0, 100.0, 60.0, 30.0);
+	[button addTarget:self action:@selector(deletePerformed) forControlEvents:UIControlEventTouchUpInside];
+	
+	UIBarButtonItem* deleteItem = [[UIBarButtonItem alloc] initWithCustomView:button];	
+	
 	
 	UIImage *buttonImage = [UIImage imageNamed:@"addicon.png"];
 	UIButton *aButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -98,7 +109,7 @@
 	
 	UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
 	flexibleSpace.width=65;//130
-	[self setToolbarItems:[NSArray arrayWithObjects:deleteButton,flexibleSpace , aBarButtonItem, nil]];
+	[self setToolbarItems:[NSArray arrayWithObjects:deleteItem,flexibleSpace , aBarButtonItem, nil]];
 	[flexibleSpace release];
 
 }
@@ -110,6 +121,9 @@
 	
 }
 -(void) deletePerformed{
+	[self doDelete];
+	[self populateSelectedArray];
+	[self togglePseudoEditMode];
 	
 }
 
@@ -129,7 +143,11 @@
 */
 	
 
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	NSLog(@"Zoeb");
 
+}
 
 
 
@@ -142,6 +160,15 @@
 	 //- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 	 //[self.navigationController setToolbarHidden:NO];
 	 //self.navigationItem.title=@"Widdle";
+	 
+	 
+	 UIImage  *imageView1 = [UIImage imageNamed:@"selected.png"];
+	 UIImage  *imageView2 = [UIImage imageNamed:@"unselected.png"];
+	 self.selectedImage = imageView1;
+	 self.unselectedImage = imageView2;
+	 [imageView1 release];
+	 [imageView2 release];
+	 
 	 self.navigationItem.hidesBackButton = YES;
 	 
 	 UILabel *wittleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
@@ -156,6 +183,8 @@
 	 editButton = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(editPerform)];
 	 self.navigationItem.rightBarButtonItem = editButton;
 	 [editButton release];
+	 
+	 [self populateSelectedArray];
 	 
 	 
 
@@ -176,18 +205,20 @@
 }
 */
 - (void) editPerform{
+	[self togglePseudoEditMode];
+	
 	if(@"Cancel"==editButton.title)
 	{
 		editButton.title=@"Edit";
-		[aTableView setEditing:NO animated:YES];
+		//[aTableView setEditing:NO animated:YES];
 	}
 	else
 	{
 		
 		editButton.title=@"Cancel";
-		[aTableView setEditing:YES animated:YES];
+		//[aTableView setEditing:YES animated:YES];
 	}
-
+	 
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -204,8 +235,10 @@
 	}
 }
 
+
+
 -(UITableViewCellEditingStyle)tableView:(UITableView*)tableView editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath {
-	return 3;
+	return 1;
 }
 
 
@@ -250,37 +283,140 @@
     ListMemoryCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
 	if (cell == nil) {
 		cell = [[[ListMemoryCell alloc] initWithFrame:CGRectZero reuseIdentifier:MyIdentifier] autorelease];
+		
+		
+		//UILabel *label = [[UILabel alloc] initWithFrame:kLabelRect];
+		//label.tag = kCellLabelTag;
+		//[cell.contentView addSubview:label];
+		//[label release];
+		
+		UIImageView *imageView = [[UIImageView alloc] initWithImage:unselectedImage];
+		imageView.frame = CGRectMake(5.0, 10.0, 23.0, 23.0);
+		[cell.contentView addSubview:imageView];
+		imageView.hidden = !inPseudoEditMode;
+		imageView.tag = kCellImageViewTag;
+		[imageView release];
+		
+		
+		
+		
 		if(indexPath.section == 0) {
 			if(indexPath.row != 2) 		{
-				UIImageView  *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mail-attachment.png"]];
-				cell.imageView= imageView;
-				[cell.contentView addSubview:imageView];
+				UIImageView  *imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mail-attachment.png"]];
+				cell.imageView= imageView1;
+				[cell.contentView addSubview:imageView1];
+				
+				
+				UIImageView  *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mail-attachment.png"]];
+				cell.imageView2= imageView2;
+				imageView2.hidden = YES;
+				[cell.contentView addSubview:imageView2];
+				imageView2.hidden = YES;			
 		
 			}
 			else {
 			
-			UIImageView  *imageView = [UIImageView alloc];
-				cell.imageView= imageView;
-				[cell.contentView addSubview:imageView];
-			}
+			UIImageView  *imageView1 = [UIImageView alloc];
+				cell.imageView= imageView1;
+				[cell.contentView addSubview:imageView1];
+				
+				
+				UIImageView  *imageView2 = [UIImageView alloc];
+				cell.imageView2= imageView2;
+				imageView2.hidden = YES;
+				[cell.contentView addSubview:imageView2];
+				imageView2.hidden = YES;			}
 			
 		}
 	}
-    
-    if(indexPath.section == 0) {
+	
+	if(indexPath.section == 0) {
 		cell.memoryTitle.text = [memoryArray objectAtIndex:indexPath.row];
+		NSLog(cell.memoryTitle.text);
 	    cell.memoryContentExtract.text = [memoryContentExtractArray objectAtIndex:indexPath.row];
-
+		
+		cell.memoryTitle2.text = [memoryArray objectAtIndex:indexPath.row];
+		NSLog(cell.memoryTitle2.text);
+	    cell.memoryContentExtract2.text = [memoryContentExtractArray objectAtIndex:indexPath.row];
+		
 	}
 	else {
 		[cell setText:@"I am in Section 2"];
 	}
+	
+	[UIView beginAnimations:@"cell shift" context:nil];
+	
+	//UILabel *label = (UILabel *)[cell.contentView viewWithTag:kCellLabelTag];
+	//label.text = [countries objectAtIndex:[indexPath row]];
+	//label.frame = (inPseudoEditMode) ? kLabelIndentedRect : kLabelRect;
+	
+	if(inPseudoEditMode) {
+		UIImageView *attachImage = cell.imageView;
+		UIImageView *attachImage2 = cell.imageView2;
+		attachImage.hidden = YES;
+		attachImage2.hidden = NO;
+		
+		UILabel *label1 = cell.memoryTitle;
+		UILabel *label11 = cell.memoryTitle2;
+		//label1.frame = CGRectMake(200 ,5, 200, 25);
+		label1.hidden = YES;
+		label11.hidden = NO;
+		
+		UILabel *label2 = cell.memoryContentExtract;
+		UILabel *label22 = cell.memoryContentExtract2;
+		label2.hidden = YES;
+		label22.hidden = NO;
+		//label2.frame = CGRectMake(200 ,25, 100, 15);
+		
+
+	}
+	else {
+		UIImageView *attachImage = cell.imageView;
+		UIImageView *attachImage2 = cell.imageView2;
+		attachImage.hidden = NO;
+		attachImage2.hidden = YES;
+		
+		UILabel *label1 = cell.memoryTitle;
+		UILabel *label11 = cell.memoryTitle2;
+		//label1.frame = CGRectMake(200 ,5, 200, 25);
+		label1.hidden = NO;
+		label11.hidden = YES;
+		
+		UILabel *label2 = cell.memoryContentExtract;
+		UILabel *label22 = cell.memoryContentExtract2;
+		label2.hidden = NO;
+		label22.hidden = YES;
+		//label2.frame = CGRectMake(200 ,25, 100, 15);
+	
+	}
+	
+	UIImageView *imageView = (UIImageView *)[cell.contentView viewWithTag:kCellImageViewTag];
+	NSNumber *selected = [selectedArray objectAtIndex:[indexPath row]];
+	imageView.image = ([selected boolValue]) ? selectedImage : unselectedImage;
+	imageView.hidden = !inPseudoEditMode;
+	[UIView commitAnimations];
+    
+  
 	cell.textColor = [UIColor blueColor];
 	
     return cell;
 }
 
 - (void)tableView: (UITableView *)tableView didSelectRowAtIndexPath: (NSIndexPath *)indexPath {
+	
+	//[self.aTableView deselectRowAtIndexPath:indexPath animated:YES];
+	if (inPseudoEditMode)
+	{
+		BOOL selected = [[selectedArray objectAtIndex:[indexPath row]] boolValue];
+		[selectedArray replaceObjectAtIndex:[indexPath row] withObject:[NSNumber numberWithBool:!selected]];
+		[self.view reloadData];
+	}
+	else if(@"Cancel"==editButton.title)
+	{
+		[self.aTableView deselectRowAtIndexPath:indexPath animated:YES];
+	}
+	
+	
 	NSLog(@"Inside cell select");
 	if(@"Edit"==editButton.title)
 	{
@@ -301,6 +437,17 @@
 	[controller release];
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 @end

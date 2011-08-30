@@ -20,7 +20,6 @@
 	NSMutableArray *memoryContentExtractArray;	
 	UIToolbar *aToolBar;
 	
-	NSMutableArray *countries;
 	NSMutableArray *selectedArray;
 	BOOL inPseudoEditMode;
 	
