@@ -60,7 +60,8 @@
 	[super loadView];	
 	//self.navigationItem.hidesBackButton = YES;
 	
-	aTableView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] style:UITableViewStyleGrouped];
+	aTableView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+	//aTableView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] style:UITableViewStyleGrouped];
 	aTableView.delegate = self;
 	aTableView.dataSource = self;
 	aTableView.autoresizesSubviews = YES;
@@ -108,9 +109,16 @@
 	[buttonImage release];
 	
 	UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-	flexibleSpace.width=65;//130
-	[self setToolbarItems:[NSArray arrayWithObjects:deleteItem,flexibleSpace , aBarButtonItem, nil]];
+	flexibleSpace.width=135;//130
+	
+	UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
+								  initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addBtnPushed)];
+	//[addButton addTarget:self action:@selector(addBtnPushed) forControlEvents:UIControlEventTouchUpInside];
+	//self.navigationItem.rightBarButtonItem = addButton;
+	[self setToolbarItems:[NSArray arrayWithObjects:flexibleSpace , addButton, nil]];
+	//[self setToolbarItems:[NSArray arrayWithObjects:deleteItem,flexibleSpace , aBarButtonItem, nil]];
 	[flexibleSpace release];
+	
 
 }
 
@@ -129,7 +137,8 @@
 
 - (UITableViewCellAccessoryType)tableView:(UITableView *)tv accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-	return UITableViewCellAccessoryDetailDisclosureButton;
+	//return UITableViewCellAccessoryDetailDisclosureButton;
+	return UITableViewCellAccessoryDisclosureIndicator;
 }
 
 /*
@@ -142,13 +151,15 @@
 }
 */
 	
-
+/*
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	NSLog(@"Zoeb");
 
 }
 
+
+*/
 
 
 
@@ -174,8 +185,8 @@
 	 UILabel *wittleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
 	 [wittleLabel setBackgroundColor:[UIColor clearColor]];
 	 [wittleLabel setTextColor:[UIColor whiteColor]];
-	 wittleLabel.text = @"Wittle";
-	 wittleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size: 22.0];
+	 wittleLabel.text = @"Memory Hive";
+	 //wittleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size: 22.0];
 	 [wittleLabel sizeToFit];
 	 self.navigationItem.titleView = wittleLabel;
 	 [wittleLabel release];	 
@@ -204,6 +215,7 @@
 	[rootViewController popNavControllerToSelf];
 }
 */
+/*
 - (void) editPerform{
 	[self togglePseudoEditMode];
 	
@@ -220,18 +232,32 @@
 	}
 	 
 }
+*/
+
+- (void) editPerform{
+	if(@"Done"==editButton.title)
+	{
+		editButton.title=@"Edit";
+		editButton.style = UIBarButtonItemStylePlain;
+		[aTableView setEditing:NO animated:YES];
+	}
+	else
+	{
+		
+		editButton.title=@"Done";
+		editButton.style = UIBarButtonItemStyleDone;
+		[aTableView setEditing:YES animated:YES];
+	}
+	
+}
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSLog(@"Checking delete");
 	if (editingStyle == UITableViewCellEditingStyleDelete) {
-		/*
-		UIAlertView *alert = [[UIAlertView alloc] 
-							  initWithTitle: @"Delete" 
-							  message: @"Do you really want to delete “George W. Bush”?" 
-							  delegate: self
-							  cancelButtonTitle: @"Cancel"
-							  otherButtonTitles: @"Of course!", nil];
-		 */
+		NSLog(@"Checking delete1");
+		[memoryArray removeObjectAtIndex:indexPath.row];
+		[memoryContentExtractArray removeObjectAtIndex:indexPath.row];
+		[aTableView reloadData];
 	}
 }
 
@@ -282,9 +308,40 @@
     
     ListMemoryCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
 	if (cell == nil) {
-		cell = [[[ListMemoryCell alloc] initWithFrame:CGRectZero reuseIdentifier:MyIdentifier] autorelease];
+		cell = [[[ListMemoryCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:MyIdentifier] autorelease];
+	}	
 		
+	if(indexPath.section == 0) {
 		
+		if(indexPath.row != 2) 		{
+			UIImage *cellImage = [UIImage imageNamed:@"paperclip.png"];
+			cell.imageView.image = cellImage;
+		}
+		else{
+			cell.imageView.image = [UIImage alloc];
+		}
+		
+		cell.textLabel.text = [memoryArray objectAtIndex:indexPath.row];
+		cell.detailTextLabel.text = [memoryContentExtractArray objectAtIndex:indexPath.row];
+		
+	}
+	else {
+		[cell setText:@"I am in Section 2"];
+	}
+	
+    return cell;
+}
+
+/*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *MyIdentifier = @"My Identifier";
+    
+    ListMemoryCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+	if (cell == nil) {
+		//cell = [[[ListMemoryCell alloc] initWithFrame:CGRectZero reuseIdentifier:MyIdentifier] autorelease];
+		cell = [[[ListMemoryCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:MyIdentifier] autorelease];
+		//[cell initWithStyle:UITableViewCellStyleSubtitle];
 		//UILabel *label = [[UILabel alloc] initWithFrame:kLabelRect];
 		//label.tag = kCellLabelTag;
 		//[cell.contentView addSubview:label];
@@ -302,21 +359,21 @@
 		
 		if(indexPath.section == 0) {
 			if(indexPath.row != 2) 		{
-				UIImageView  *imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mail-attachment.png"]];
+				UIImageView  *imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paperclip.png"]];
 				cell.imageView= imageView1;
 				[cell.contentView addSubview:imageView1];
 				
 				
-				UIImageView  *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mail-attachment.png"]];
+				UIImageView  *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paperclip.png"]];
 				cell.imageView2= imageView2;
 				imageView2.hidden = YES;
 				[cell.contentView addSubview:imageView2];
 				imageView2.hidden = YES;			
-		
+				
 			}
 			else {
-			
-			UIImageView  *imageView1 = [UIImageView alloc];
+				
+				UIImageView  *imageView1 = [UIImageView alloc];
 				cell.imageView= imageView1;
 				[cell.contentView addSubview:imageView1];
 				
@@ -325,7 +382,7 @@
 				cell.imageView2= imageView2;
 				imageView2.hidden = YES;
 				[cell.contentView addSubview:imageView2];
-				imageView2.hidden = YES;			}
+			imageView2.hidden = YES;			}
 			
 		}
 	}
@@ -334,6 +391,8 @@
 		cell.memoryTitle.text = [memoryArray objectAtIndex:indexPath.row];
 		NSLog(cell.memoryTitle.text);
 	    cell.memoryContentExtract.text = [memoryContentExtractArray objectAtIndex:indexPath.row];
+		cell.textLabel.text = [memoryArray objectAtIndex:indexPath.row];
+		cell.detailTextLabel.text = [memoryContentExtractArray objectAtIndex:indexPath.row];
 		
 		cell.memoryTitle2.text = [memoryArray objectAtIndex:indexPath.row];
 		NSLog(cell.memoryTitle2.text);
@@ -368,7 +427,7 @@
 		label22.hidden = NO;
 		//label2.frame = CGRectMake(200 ,25, 100, 15);
 		
-
+		
 	}
 	else {
 		UIImageView *attachImage = cell.imageView;
@@ -387,7 +446,7 @@
 		label2.hidden = NO;
 		label22.hidden = YES;
 		//label2.frame = CGRectMake(200 ,25, 100, 15);
-	
+		
 	}
 	
 	UIImageView *imageView = (UIImageView *)[cell.contentView viewWithTag:kCellImageViewTag];
@@ -396,11 +455,46 @@
 	imageView.hidden = !inPseudoEditMode;
 	[UIView commitAnimations];
     
-  
-	cell.textColor = [UIColor blueColor];
+	
+	//cell.textColor = [UIColor blueColor];
 	
     return cell;
 }
+*/
+ 
+
+/*
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+    }
+	
+	if(indexPath.section == 0) {
+		
+		if(indexPath.row != 2) 		{
+			UIImage *cellImage = [UIImage imageNamed:@"paperclip.png"];
+			cell.imageView.image = cellImage;
+		}
+		else{
+			cell.imageView.image = [UIImage alloc];
+		}
+		
+		
+		cell.textLabel.text = [memoryArray objectAtIndex:indexPath.row];
+		cell.detailTextLabel.text = [memoryContentExtractArray objectAtIndex:indexPath.row];
+	}
+    
+    //cell.textLabel.text = @"Shakespeare's Sonnet 1: From Fairest Creatures We Desire Increase";
+	//cell.detailTextLabel.text = @"We want all beautiful creatures to reproduce themselves so...";
+    return cell;
+}
+
+*/
 
 - (void)tableView: (UITableView *)tableView didSelectRowAtIndexPath: (NSIndexPath *)indexPath {
 	

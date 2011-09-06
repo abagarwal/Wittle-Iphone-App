@@ -12,7 +12,7 @@
 @implementation ListMemoryCell
 
 @synthesize memoryTitle,memoryContentExtract;
-@synthesize imageView;
+//@synthesize imageView;
 
 @synthesize memoryTitle2,memoryContentExtract2;
 @synthesize imageView2;
@@ -23,22 +23,25 @@
 		// Initialization code
 		memoryTitle = [[UILabel alloc]init];
 		memoryTitle.textAlignment = UITextAlignmentLeft;
-		memoryTitle.font = [UIFont systemFontOfSize:14];
+		//memoryTitle.font = [UIFont boldSystemFontOfSize:14];
+		memoryTitle.font = [UIFont fontWithName:@"Helvetica-Bold" size: 18.0];
 		memoryContentExtract = [[UILabel alloc]init];
 		memoryContentExtract.textAlignment = UITextAlignmentLeft;
-		memoryContentExtract.font = [UIFont systemFontOfSize:8];
-		[self.contentView addSubview:memoryTitle];
-		[self.contentView addSubview:memoryContentExtract];
+		//memoryContentExtract.font = [UIFont systemFontOfSize:12];
+		memoryContentExtract.font = [UIFont fontWithName:@"Helvetica" size: 14.0];
+		//memoryContentExtract.font = [UIFont boldSystemFontOfSize:14];
+		//[self.contentView addSubview:memoryTitle];
+		//[self.contentView addSubview:memoryContentExtract];
 		
-		imageView.tag =1;
+		//imageView.tag =1;
 		memoryTitle.tag=2;
 		memoryContentExtract.tag =3;
 		//imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mail-attachment.png"]];
 		//cell.accessoryView = imageView;
 		
-		[self.contentView addSubview:imageView];
+		//[self.contentView addSubview:imageView];
 		
-		[imageView release];	
+		//[imageView release];	
 		
 		
 		
@@ -46,17 +49,17 @@
 		
 		memoryTitle2 = [[UILabel alloc]init];
 		memoryTitle2.textAlignment = UITextAlignmentLeft;
-		memoryTitle2.font = [UIFont systemFontOfSize:14];
+		memoryTitle2.font = [UIFont boldSystemFontOfSize:14];
 		memoryContentExtract2 = [[UILabel alloc]init];
 		memoryContentExtract2.textAlignment = UITextAlignmentLeft;
-		memoryContentExtract2.font = [UIFont systemFontOfSize:8];
-		[self.contentView addSubview:memoryTitle2];
-		[self.contentView addSubview:memoryContentExtract2];
+		memoryContentExtract2.font = [UIFont systemFontOfSize:12];
+		//[self.contentView addSubview:memoryTitle2];
+		//[self.contentView addSubview:memoryContentExtract2];
 		
 		//imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mail-attachment.png"]];
 		//cell.accessoryView = imageView;
 		
-		[self.contentView addSubview:imageView2];
+		//[self.contentView addSubview:imageView2];
 		
 		[imageView2 release];
 		
@@ -67,6 +70,7 @@
 
 - (void)layoutSubviews {
 	[super layoutSubviews];
+	/*
 	CGRect contentRect = self.contentView.bounds;
 	CGFloat boundsX = contentRect.origin.x;
 	CGRect frame;
@@ -95,6 +99,22 @@
 	frame= CGRectMake(boundsX+30+40,25, 100, 15);
 	memoryContentExtract2.frame = frame;
 	//memoryContentExtract.tag =3;
+	*/
+	
+	
+	CGRect contentRect = self.contentView.bounds;
+	CGFloat boundsX = contentRect.origin.x;
+	CGRect frame;
+	
+	frame= CGRectMake(boundsX ,10, 30, 30);
+	super.imageView.frame = frame;
+	
+	frame= CGRectMake(boundsX+30 ,5, 200, 25);
+	super.textLabel.frame = frame;
+	
+	frame= CGRectMake(boundsX+30 ,25, 100, 15);
+	super.detailTextLabel.frame = frame;
+	
 	
 	
 }
